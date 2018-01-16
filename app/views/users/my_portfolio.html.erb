@@ -1,0 +1,19 @@
+<h1>Mein Portfolio</h1>
+<h3>Nach Stocks suchen</h3>
+<div id="stock-lookup">
+    <%= form_tag "#", method: :get, id: "stock-lookup-form" do %>
+        <div class="form-group row no-padding text-center col-md-12">
+            <div class="col-md-10">
+                <%= text_field_tag :stock, params[:stock], placeholder: "Stock symbol", autofocus: true,
+                                          class: "form-control search-box input-lg" %> 
+            </div>
+            <div class="col-md-2">
+                <%= button_tag(type: :submit, class: "btn btn-lg btn-success") do %>
+                    <i class="fa fa-search"></i>Nach einem Stock suchen
+                <% end %>
+            </div>
+        </div>
+    <% end %>
+</div>
+
+<%= link_to "logout", destroy_user_session_path, method: :delete %>
